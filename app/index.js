@@ -22,9 +22,9 @@ export default function App() {
 						<Redirect to="/" />
 					</Route>
 					<Route exact path='/' render={ () => ( <Popular languages={ ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'] }/> )}/>
-					<Route exact path='/battle' component={Battle} />
-					<Route path='/battle/results' component={BattleResults}/>
-					<Route><NotFound/></Route>
+					<Route exact path='/battle' render={ ( props ) => <Battle {...props}/>} />
+					<Route path='/battle/results' render={ ( props ) => < BattleResults {...props}/>} />
+					<Route render={ ( props ) => <NotFound {...props}/>} />
 				</Switch>
 			</React.Suspense>
 		</Router>
