@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import {
+	Route, HashRouter as Router, Redirect, Switch,
+} from 'react-router-dom';
 import './styles/index.scss';
 import Loading from './components/Loading.js';
 import Nav from './components/Nav.js';
@@ -16,7 +18,10 @@ export default function App() {
 			<Nav/>
 			<React.Suspense fallback={<Loading message='Still Loading'/>} >
 				<Switch>
-					<Route exact path={['/', '/git-battle/']} render={ () => ( <Popular languages={ ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'] }/> )}/>
+					<Route exact path="/index.html">
+						<Redirect to="/" />
+					</Route>
+					<Route exact path='/' render={ () => ( <Popular languages={ ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'] }/> )}/>
 					<Route exact path='/battle' component={Battle} />
 					<Route path='/battle/results' component={BattleResults}/>
 					<Route><NotFound/></Route>
