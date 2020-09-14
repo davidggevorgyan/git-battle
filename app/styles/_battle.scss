@@ -1,0 +1,25 @@
+.battle {
+	margin: 2rem;
+	h2 {
+		text-align: center;
+	}
+	ul {
+		@include flex(space-around, center, row);
+		flex-wrap: wrap;
+	}
+
+	li {
+		@include flex(space-around, center, column);
+		margin: 1rem;
+		padding: 2rem;
+	}
+
+	.drawing {
+		width: 50rem;
+	}
+
+	button {
+		display: block;
+		margin: 2rem auto;
+	}
+}

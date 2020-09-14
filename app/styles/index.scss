@@ -1,0 +1,81 @@
+$header1: 2.5rem;
+$header2: 4rem;
+$header3: 2.5rem;
+$header4: 2rem;
+$text: 2.5rem;
+$grey-text: #2c2c2c;
+$red-text: #e63946;
+
+@mixin flex($justify, $align, $direction) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+@import 'global';
+@import 'battle';
+@import 'battle-results';
+@import 'card';
+@import 'card-list';
+@import 'players';
+@import 'player-input';
+@import 'player-preview';
+
+html {
+	font-size: 53%;
+	background-color: #ffffff;
+}
+
+nav {
+	@include flex(center, center, column);
+	margin: 5rem auto;
+	max-height: 10rem;
+	height: 10rem;
+	ul {
+		@include flex(space-between, center, row);
+
+		li {
+			margin: 0 1rem;
+			cursor: pointer;
+			font-weight: bold;
+		}
+
+		a {
+			color: $grey-text;
+		}
+
+		a:hover {
+			color: $red-text;
+		}
+	}
+}
+
+.error {
+	color: #ff1616;
+	font-size: $header1;
+	margin: 5rem 0;
+}
+
+.error-img {
+	display: block;
+	margin: auto;
+	width: 50%;
+}
+
+.selected {
+	color: $red-text;
+}
+
+.gray-bg {
+	background-color: rgb(253, 253, 253);
+	border-radius: 0.5rem;
+	border: solid 0.1rem rgb(239, 239, 239);
+}
+
+@media screen and (max-width: 800px) {
+	.drawing {
+		max-width: 20rem;
+		align-self: center;
+	}
+}

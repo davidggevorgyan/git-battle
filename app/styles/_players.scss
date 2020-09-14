@@ -1,0 +1,6 @@
+.players {
+	margin: 1rem;
+	@include flex(space-around, center, row);
+	flex-wrap: wrap;
+	flex-basis: 1;
+}

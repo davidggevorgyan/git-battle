@@ -1,0 +1,4 @@
+.card-list {
+	@include flex(space-around, top, row);
+	flex-wrap: wrap;
+}
