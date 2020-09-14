@@ -14,7 +14,7 @@ const Popular = React.lazy( () => import( './components/Popular.js' ) );
 
 export default function App() {
 	return (
-		<Router>
+		<Router basename="/">
 			<Nav/>
 			<React.Suspense fallback={<Loading message='Still Loading'/>} >
 				<Switch>
