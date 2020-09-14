@@ -7,7 +7,7 @@ module.exports = {
 	output: {
 		path: path.resolve( __dirname, 'git-battle' ),
 		filename: 'index_bundle.js',
-		publicPath: '/',
+		publicPath: '/git-battle/',
 	},
 	module: {
 		rules: [
