@@ -7,7 +7,7 @@
 	"scripts": {
 		"start": "webpack-dev-server",
 		"build": "NODE_ENV='production' webpack",
-		"deploy": "gh-pages -d build"
+		"deploy": "gh-pages -d dist"
 	},
 	"babel": {
 		"presets": [
