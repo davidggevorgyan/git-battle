@@ -16,9 +16,9 @@ export default function App() {
 			<Nav/>
 			<React.Suspense fallback={<Loading message='Still Loading'/>} >
 				<Switch>
-					<Route exact path="/" render={ () => ( <Popular languages={ ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'] }/> )}/>
-					<Route exact path="/battle" component={Battle} />
-					<Route path="/battle/results" component={BattleResults}/>
+					<Route exact path={['/', '/git-battle/']} render={ () => ( <Popular languages={ ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python'] }/> )}/>
+					<Route exact path='/battle' component={Battle} />
+					<Route path='/battle/results' component={BattleResults}/>
 					<Route><NotFound/></Route>
 				</Switch>
 			</React.Suspense>
