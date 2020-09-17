@@ -18,7 +18,13 @@
 		"plugins": [
 			"@babel/plugin-proposal-private-methods",
 			"@babel/plugin-proposal-class-properties",
-			"syntax-dynamic-import"
+			"syntax-dynamic-import",
+			[
+				"@babel/plugin-transform-runtime",
+				{
+					"regenerator": true
+				}
+			]
 		]
 	},
 	"keywords": [],
@@ -31,25 +37,33 @@
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-icons": "^3.10.0",
-		"react-router-dom": "^5.2.0",
-		"save-dev": "0.0.1-security"
+		"react-router-dom": "^5.2.0"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.11.1",
 		"@babel/plugin-proposal-class-properties": "^7.10.4",
+		"@babel/plugin-transform-runtime": "^7.11.5",
 		"@babel/preset-env": "^7.11.0",
 		"@babel/preset-react": "^7.10.4",
+		"@testing-library/jest-dom": "^5.11.4",
+		"@testing-library/react": "^11.0.4",
+		"@testing-library/user-event": "^12.1.5",
 		"@types/jest": "^26.0.13",
 		"babel-eslint": "^10.1.0",
+		"babel-jest": "^26.3.0",
 		"babel-loader": "^8.1.0",
 		"css-loader": "^4.2.2",
 		"eslint": "^7.4.0",
 		"eslint-config-airbnb-base": "^14.2.0",
 		"eslint-plugin-import": "^2.22.0",
+		"eslint-plugin-jest-dom": "^3.2.3",
 		"eslint-plugin-react": "^7.20.6",
+		"eslint-plugin-testing-library": "^3.8.0",
 		"file-loader": "^6.0.0",
 		"html-webpack-plugin": "^4.3.0",
+		"identity-obj-proxy": "^3.0.0",
 		"jest": "^26.4.2",
+		"jest-prop-type-error": "^1.1.0",
 		"mini-css-extract-plugin": "^0.11.0",
 		"node-sass": "^4.14.1",
 		"sass-loader": "^10.0.1",
@@ -57,67 +71,5 @@
 		"webpack": "^4.44.1",
 		"webpack-cli": "^3.3.12",
 		"webpack-dev-server": "^3.11.0"
-	},
-	"eslintConfig": {
-		"extends": [
-			"airbnb-base",
-			"plugin:react/recommended"
-		],
-		"env": {
-			"node": true,
-			"es6": true,
-			"jest": true,
-			"browser": true
-		},
-		"parser": "babel-eslint",
-		"parserOptions": {
-			"ecmaVersion": 6,
-			"sourceType": "module",
-			"ecmaFeatures": {
-				"jsx": true
-			}
-		},
-		"rules": {
-			"indent": [
-				"error",
-				"tab"
-			],
-			"import/extensions": [
-				"error",
-				"ignorePackages"
-			],
-			"no-plusplus": [
-				"error",
-				{
-					"allowForLoopAfterthoughts": true
-				}
-			],
-			"no-tabs": [
-				"error",
-				{
-					"allowIndentationTabs": true
-				}
-			],
-			"padded-blocks": [
-				"error",
-				{
-					"classes": "always"
-				}
-			],
-			"space-in-parens": [
-				"error",
-				"always"
-			],
-			"template-curly-spacing": [
-				"error",
-				"always"
-			],
-			"no-underscore-dangle": [
-				"error",
-				{
-					"allowAfterThis": true
-				}
-			]
-		}
 	}
 }

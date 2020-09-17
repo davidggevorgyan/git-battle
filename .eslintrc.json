@@ -1,0 +1,59 @@
+{
+	"extends": [
+		"airbnb-base",
+		"plugin:react/recommended",
+		"plugin:testing-library/react",
+		"plugin:jest-dom/recommended"
+	],
+	"plugins": ["testing-library", "jest-dom", "react"],
+	"env": {
+		"node": true,
+		"es6": true,
+		"jest": true,
+		"browser": true
+	},
+	"parser": "babel-eslint",
+	"parserOptions": {
+		"ecmaVersion": 6,
+		"sourceType": "module",
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"rules": {
+		"indent": ["error", "tab"],
+		"import/extensions": ["error", "ignorePackages"],
+		"no-plusplus": [
+			"error",
+			{
+				"allowForLoopAfterthoughts": true
+			}
+		],
+		"no-tabs": [
+			"error",
+			{
+				"allowIndentationTabs": true
+			}
+		],
+		"padded-blocks": [
+			"error",
+			{
+				"classes": "always"
+			}
+		],
+		"space-in-parens": ["error", "always"],
+		"template-curly-spacing": ["error", "always"],
+		"no-underscore-dangle": [
+			"error",
+			{
+				"allowAfterThis": true
+			}
+		],
+		"testing-library/no-render-in-setup": "error",
+		"testing-library/no-wait-for-empty-callback": "error",
+		"testing-library/prefer-explicit-assert": "error",
+		"testing-library/prefer-presence-queries": "error",
+		"testing-library/prefer-screen-queries": "error",
+		"testing-library/prefer-wait-for": "error"
+	}
+}
