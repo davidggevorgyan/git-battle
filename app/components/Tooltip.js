@@ -7,7 +7,7 @@ export default function Tooltip( { text, children } ) {
 	return (
 		<Hover render={ ( hovering ) => (
 			<div className='container'>
-				{hovering && <div className='tooltip'>{text}</div>}
+				{hovering && <div role='tooltip' className='tooltip'>{text}</div>}
 				{children}
 			</div> )
 		}></Hover>
