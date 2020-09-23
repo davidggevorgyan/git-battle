@@ -1,3 +1,10 @@
+function getErrorMsg( message, object ) {
+	if ( message === 'Not found' ) {
+		return `${ object } doesn't exist`;
+	}
+	return message;
+}
+
 export function fetchPopularRepositories( language ) {
 	const endpoint = window.encodeURI( `https://api.github.com/search/repositories?q=stars:>1+language:${ language }&sort=stars&order=desc&type=Repositories` );
 
@@ -5,18 +12,10 @@ export function fetchPopularRepositories( language ) {
 		.then( ( res ) => res.json() )
 		.then( ( data ) => {
 			if ( !data.items ) {
-				throw new Error( data.message );
+				throw new Error( getErrorMsg( data.message, language ) );
 			}
 			return data.items;
 		} );
-}
-
-function getErrorMsg( message, username ) {
-	if ( message === 'Not found' ) {
-		return `${ username } doesn't exist`;
-	}
-
-	return message;
 }
 
 function getProfile( username ) {
@@ -24,7 +23,7 @@ function getProfile( username ) {
 		.then( ( res ) => res.json() )
 		.then( ( profile ) => {
 			if ( profile.message ) {
-				throw new Error( getErrorMsg( profile.message, username ) );
+				throw new Error( `${ getErrorMsg( profile.message, username ) }: Can't get ${ username }` );
 			}
 			return profile;
 		} );
@@ -35,7 +34,7 @@ function getRepos( username ) {
 		.then( ( res ) => res.json() )
 		.then( ( repos ) => {
 			if ( repos.message ) {
-				throw new Error( getErrorMsg( repos.message ) );
+				throw new Error( `${ getErrorMsg( repos.message ) }: Can't get ${ username } repos` );
 			}
 			return repos;
 		} );
