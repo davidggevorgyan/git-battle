@@ -41,7 +41,7 @@ export default class BattleResults extends React.Component {
 		}
 
 		if ( error ) {
-			return <h1>{error}</h1>;
+			return <h1 className='error'>{ error }</h1>;
 		}
 
 		return (

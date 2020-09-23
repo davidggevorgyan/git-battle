@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Tooltip from './Tooltip.js';
 
 export default class Card extends React.Component {
 
@@ -18,6 +19,19 @@ export default class Card extends React.Component {
 		);
 	}
 
+}
+
+export function infoItem( label, icon, suffix = '', tooltipText ) {
+	if ( tooltipText ) {
+		return (
+			<Tooltip text={tooltipText}>
+				<h5>{icon} {`${ label } ${ suffix }`} </h5>
+			</Tooltip>
+		);
+	}
+	return (
+		<h5>{icon} {`${ label } ${ suffix }`} </h5>
+	);
 }
 
 Card.propTypes = {

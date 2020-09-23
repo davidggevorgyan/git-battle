@@ -36,15 +36,15 @@ export default class Battle extends React.Component {
 				<ul>
 					<li>
 						<h3>1. Enter two github users</h3>
-						<img src={TwoUsers} alt="React Logo" className='drawing'/>
+						<img src={TwoUsers} alt="Two users" className='drawing'/>
 					</li>
 					<li>
 						<h3>2. Battle</h3>
-						<img src={Compare} alt="React Logo" className='drawing'/>
+						<img src={Compare} alt="Battle" className='drawing'/>
 					</li>
 					<li>
 						<h3>3. See the winner</h3>
-						<img src={Winner} alt="React Logo" className='drawing'/>
+						<img src={Winner} alt="See the winner" className='drawing'/>
 					</li>
 				</ul>
 				<div className='players'>

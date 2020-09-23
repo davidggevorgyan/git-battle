@@ -3,5 +3,6 @@
 	"moduleNameMapper": {
 		"\\.(css|less|scss)$": "identity-obj-proxy"
 	},
+	"clearMocks": true,
 	"collectCoverageFrom": ["app/**/*.js"]
 }
