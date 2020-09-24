@@ -6,7 +6,6 @@ import userEvent from '@testing-library/user-event';
 import { FaUserFriends } from 'react-icons/fa';
 import Card, { infoItem } from '../Card.js';
 
-
 it( 'should render a card', () => {
 	const {
 		header, subheader, avatar, href, name,

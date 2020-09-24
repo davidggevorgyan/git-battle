@@ -70,11 +70,12 @@ export default class Battle extends React.Component {
 				{
 					( playerOne && playerTwo )
 						? <Link
+							data-testid='battle-users'
 							to={{
 								pathname: '/battle/results',
 								search: `?playerOne=${ playerOne }&playerTwo=${ playerTwo }`,
 							}}
-						><button>Battle</button>
+						><button>Battle!</button>
 						</Link>
 						: null
 				}

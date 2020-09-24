@@ -15,7 +15,7 @@ export default function PlayerPreview( { username, onReset, label } ) {
 			>
 				{username}
 			</a>
-			<button onClick={onReset}>
+			<button title='Clear selected user' onClick={onReset}>
 				<FaTimesCircle color='#e63946' size='26' />
 			</button>
 
