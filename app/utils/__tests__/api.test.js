@@ -1,7 +1,7 @@
 import { fetchPopularRepositories, battle } from '../api.js';
 
 global.fetch = jest.fn( () => Promise.resolve( {
-	json: () => Promise.resolve( { rates: { CAD: 1.42 } } ),
+	json: () => Promise.resolve( { message: 'Not found' } ),
 } ) );
 
 const user = {
@@ -36,9 +36,9 @@ it( 'should get popular repos for specified language', async () => {
 } );
 
 it( 'should throw an error if Popular repos are not returned', async () => {
-	let message = 'A test message';
+	const message = 'A test message';
 	expect.assertions( 2 );
-	fetch.mockReturnValue( Promise.resolve( { json: () => ( { message } ) } ) );
+	fetch.mockReturnValueOnce( Promise.resolve( { json: () => ( { message } ) } ) );
 
 	try {
 		await fetchPopularRepositories( 'JavaScript' );
@@ -46,7 +46,6 @@ it( 'should throw an error if Popular repos are not returned', async () => {
 		expect( e.message ).toEqual( message );
 	}
 
-	message = 'Not found';
 	try {
 		await fetchPopularRepositories( 'JS' );
 	} catch ( e ) {
@@ -54,22 +53,18 @@ it( 'should throw an error if Popular repos are not returned', async () => {
 	}
 } );
 
-it( 'should throw an error if user repos are not returned', async () => {
-	const message = 'A test message';
+it( 'should throw an error if user is not returned', async () => {
 	const userName = 'asd';
-
 	expect.assertions( 1 );
-	fetch.mockReturnValue( Promise.resolve( { json: () => ( { message } ) } ) );
-
 	try {
-		await battle( ['asd', 'dsa'] );
+		await battle( [userName, userName] );
 	} catch ( e ) {
-		expect( e.message ).toEqual( `${ message }: Can't get ${ userName }` );
+		expect( e.message ).toEqual( `Can't get ${ userName } profile` );
 	}
 
 } );
 
-it( 'should throw an error if user info is not returned', async () => {
+it( 'should throw an error if user repo is not returned', async () => {
 	const message = 'A test message';
 	const userName = 'asd';
 
