@@ -19,11 +19,11 @@ export function fetchPopularRepositories( language ) {
 }
 
 function getProfile( username ) {
-	return fetch( `https://api.github.com/users/${ username } ` )
+	return fetch( `https://api.github.com/users/${ username }` )
 		.then( ( res ) => res.json() )
 		.then( ( profile ) => {
 			if ( profile.message ) {
-				throw new Error( `${ getErrorMsg( profile.message, username ) }: Can't get ${ username }` );
+				throw new Error( `Can't get ${ username } profile` );
 			}
 			return profile;
 		} );
