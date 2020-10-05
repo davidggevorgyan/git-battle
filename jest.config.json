@@ -5,5 +5,5 @@
 		".+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
 	},
 	"clearMocks": true,
-	"collectCoverageFrom": ["app/**/*.js"]
+	"collectCoverageFrom": ["app/**/*.js", "!app/index.js"]
 }
