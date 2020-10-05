@@ -2,7 +2,6 @@ import React from 'react';
 import { screen, render, waitFor } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import { BrowserRouter as Router } from 'react-router-dom';
-import userEvent from '@testing-library/user-event';
 import { battle } from '../../utils/api.js';
 
 import BattleResults from '../BattleResults.js';
@@ -80,6 +79,7 @@ it( 'should show tie if you are comparing same user twice', async () => {
 			location: 'Yerevan',
 			public_repos: 6,
 			public_gists: 0,
+			company: 'twitter',
 			followers: 3,
 			following: 2,
 		},
