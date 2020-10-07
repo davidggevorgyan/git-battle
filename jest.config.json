@@ -2,7 +2,7 @@
 	"setupFiles": ["jest-prop-type-error"],
 	"transform": {
 		"^.+\\.js$": "babel-jest",
-		".+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$": "jest-transform-stub"
+		".+\\.(svg|css|style|less|sass|scss|png|jpg|ttf)$": "jest-transform-stub"
 	},
 	"clearMocks": true,
 	"collectCoverageFrom": ["app/**/*.js", "!app/index.js"]
