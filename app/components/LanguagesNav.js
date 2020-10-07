@@ -10,7 +10,7 @@ export default function LanguagesNav( { languages, selectedLanguage, onUpdateLan
 						<li
 							onClick={() => onUpdateLanguage( el ) }
 							key={el + index}>
-							<a className={ selectedLanguage === el ? 'selected' : null}>
+							<a className={ selectedLanguage === el ? 'active' : null}>
 								{ el }
 							</a>
 						</li>
