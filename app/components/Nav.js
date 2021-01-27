@@ -10,13 +10,16 @@ export default function Nav() {
 		<nav>
 			<ul>
 				<li>
-					<NavLink exact role='navigation' activeStyle={activeStyle} to="/">Popular</NavLink>
+					<NavLink exact role="navigation" activeStyle={activeStyle} to="/">
+						Popular
+					</NavLink>
 				</li>
 				<li>
-					<NavLink role='navigation' activeStyle={activeStyle} to="/battle">Battle</NavLink>
+					<NavLink role="navigation" activeStyle={activeStyle} to="/battle">
+						Battle
+					</NavLink>
 				</li>
 			</ul>
 		</nav>
 	);
-
 }

@@ -1,48 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default class PlayerInput extends React.Component {
+export default function PlayerInput(props) {
+	const [username, setUsername] = React.useState('');
 
-	state = {
-		username: '',
-	}
-
-	handleSubmit = ( event ) => {
+	const handleSubmit = (event) => {
 		event.preventDefault();
-		this.props.onSubmit( this.state.username );
-	}
+		props.onSubmit(username);
+	};
 
-	handleChange = ( event ) => {
+	const handleChange = (event) => {
 		event.preventDefault();
-		this.setState( {
-			username: event.target.value,
-		} );
-	}
+		setUsername(event.target.value);
+	};
 
-	render() {
-		return (
-			<form onSubmit={this.handleSubmit} className='player-input'>
-				<label htmlFor='username'>
-					{this.props.label}
-				</label>
-				<input
-					type='text'
-					id='username'
-					placeholder='GitHub username'
-					autoComplete='off'
-					value={this.state.username}
-					onChange={this.handleChange}
-				/>
-				<button
-					type='submit'
-					disabled={!this.state.username}
-				>
-					Submit
-				</button>
-			</form>
-		);
-	}
-
+	return (
+		<form onSubmit={handleSubmit} className="player-input">
+			<label htmlFor="username">{props.label}</label>
+			<input
+				type="text"
+				id="username"
+				placeholder="GitHub username"
+				autoComplete="off"
+				value={username}
+				onChange={handleChange}
+			/>
+			<button type="submit" disabled={!username}>
+				Submit
+			</button>
+		</form>
+	);
 }
 
 PlayerInput.propTypes = {

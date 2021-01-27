@@ -1,16 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Hover from './Hover.js';
 import '../styles/tooltip.scss';
+import useHover from '../hooks/useHover.js';
 
-export default function Tooltip( { text, children } ) {
+export default function Tooltip({ text, children }) {
+	const [hovering, attrs] = useHover();
+
 	return (
-		<Hover render={ ( hovering ) => (
-			<div className='container'>
-				{hovering && <div role='tooltip' className='tooltip'>{text}</div>}
-				{children}
-			</div> )
-		}></Hover>
+		<div {...attrs} className="container">
+			{hovering && (
+				<div role="tooltip" className="tooltip">
+					{text}
+				</div>
+			)}
+			{children}
+		</div>
 	);
 }
 

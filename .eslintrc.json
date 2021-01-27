@@ -35,14 +35,6 @@
 				"allowIndentationTabs": true
 			}
 		],
-		"padded-blocks": [
-			"error",
-			{
-				"classes": "always"
-			}
-		],
-		"space-in-parens": ["error", "always"],
-		"template-curly-spacing": ["error", "always"],
 		"no-underscore-dangle": [
 			"error",
 			{

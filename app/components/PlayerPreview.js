@@ -2,23 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FaTimesCircle } from 'react-icons/fa';
 
-export default function PlayerPreview( { username, onReset, label } ) {
+export default function PlayerPreview({ username, onReset, label }) {
 	return (
-		<div className='player-preview'>
+		<div className="player-preview">
 			<p>{label}</p>
 			<img
-				src={`https://github.com/${ username }.png?size=200`}
-				alt={`avatar for ${ username }`}
+				src={`https://github.com/${username}.png?size=200`}
+				alt={`avatar for ${username}`}
 			/>
-			<a
-				href={`https://gihub.com/${ username }`}
-			>
-				{username}
-			</a>
-			<button title='Clear selected user' onClick={onReset}>
-				<FaTimesCircle color='#e63946' size='26' />
+			<a href={`https://gihub.com/${username}`}>{username}</a>
+			<button title="Clear selected user" onClick={onReset}>
+				<FaTimesCircle color="#e63946" size="26" />
 			</button>
-
 		</div>
 	);
 }
