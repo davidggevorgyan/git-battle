@@ -28,7 +28,7 @@ export default function Popular({ languages }) {
 
 	React.useEffect(() => {
 		onUpdateLanguage(selectedLanguage);
-	}, [selectedLanguage]);
+	}, []);
 
 	const isLoading = () => !repositories[selectedLanguage] && error === null;
 
